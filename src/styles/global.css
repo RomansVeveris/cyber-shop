@@ -1,0 +1,164 @@
+:root {
+    --color1: #909090;
+    --color2: #545454;
+    --color3: #D9D9D9;
+    --color4: #f6f6f6;
+    --color-black: #000;
+    --color-white: #fff;
+}
+
+* {
+    font-family: 'Figtree', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+p.small {
+    font-size: 0.875rem;
+}
+p.dark-grey {
+    color: #545454;
+    padding-bottom: 0.5rem;
+}
+
+p.grey {
+    color: var(--color1);
+}
+p.bold {
+    font-weight: 500;
+}
+
+h1, h3{
+    font-weight: 200;
+}
+
+h1 {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+}
+
+h2 {
+    font-size: 2.125rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 1.56rem;
+}
+h4 {
+    font-size: 1.25rem;
+}
+
+strong {
+    font-weight: 500;
+}
+
+
+h3.bold {
+    font-weight: 600;
+}
+h5 {
+    font-size: 1rem;
+}
+.btn {
+    border-radius: 6px;
+    min-width: 11.5rem;
+    padding: 0.75rem 0;
+    line-height: 1.5rem;
+    margin: 1rem auto 0rem auto;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
+    cursor: pointer;
+}
+
+.btn.transparent-white{ 
+    background-color: transparent;
+}
+
+
+.btn.black {
+    background: #000;
+    border-color: #000;
+    box-shadow: 5px 5px 5px rbga(0, 0, 0, 1);
+}
+
+.btn.black.wide {
+    width: 100%;
+    max-width: 100%;
+}
+
+.btn.transparent-black {
+    background-color: transparent;
+    color: var(--color-black);
+    border-color: var(--color-black);
+}
+
+.btn.transparent-black.wide {
+    width: 100%;
+    max-width: 100%;
+}
+
+.btn.filled-black.small {
+    min-width: 0;
+    width: 100%;
+    border-color: var(--color-black);
+    background-color: var(--color-black);
+}
+.btn.empty {
+    border: none;
+    background-color: transparent;
+    width: 2.25rem;
+    height: 2.25rem;
+    min-width: 0;
+    display: flex;
+    padding: 0.25rem;
+    margin: 0;
+    border-radius: 50%;
+}
+.btn.empty:hover {
+    background-color: transparent;
+}
+
+.btn:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.400);
+}
+.btn.filled-black:hover {
+    background-color: transparent;
+    color: var(--color-black);
+}
+.btn.transparent-white:hover{
+    background-color: var(--color-white);
+    color: var(--color-black);    
+}
+.btn.black:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.link-btn {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+a:hover {
+    color: rgb(255, 140, 159);
+}
+a {
+  transition: color 0.1s ease-in-out;
+}
+
+
+
+
+
+

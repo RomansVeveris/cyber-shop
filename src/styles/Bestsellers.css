@@ -1,0 +1,49 @@
+.catalog {
+    max-width: 100%;
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+.catalog-item {
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+.catalog-image {
+    max-height: 12.5rem;
+    width: auto;
+    margin-bottom: 1.5rem;
+}
+
+.catalog-h2 {
+    margin-bottom: 1rem;
+    line-height: 2.5rem;
+}
+
+.catalog-strong {
+    font-weight: 700;
+}
+
+
+@media (min-width: 1024px){
+    .catalog-item.playstation {
+        grid-area: playstation;
+    }
+
+    .catalog-item.airpods {
+        grid-area: airpods;
+    }
+
+    .catalog-item.vision {
+        grid-area: vision;
+    }
+
+    .catalog-item.macbook {
+        grid-area: macbook;
+    }
+}
