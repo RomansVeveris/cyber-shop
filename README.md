@@ -12,7 +12,7 @@
 - Stripe Checkout integration
 - Order data is stored in Firestore only after successful payment
 ## ⚠️ Note
-- This is a personal project built for demonstrational purposes. Minor improvements and refactors are ongoing.
+- This is a personal project built for demonstrational purposes. Minor improvements and refactoring are ongoing, and certain functionalities may not work as expected.
 ## Contacts
 - **Author:** Romans Veveris
 - **Email:** terr18@inbox.lv
