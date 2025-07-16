@@ -44,8 +44,6 @@ export function Bestsellers() {
       background: "#EDEDED",
       whiteTitle: false,
     },
-
-
   ];
   return (
     <section className="catalog">
@@ -85,9 +83,7 @@ export function Bestsellers() {
             </div>
         );
       })}
-
     </section>
   );
 }
-
 export default Bestsellers;

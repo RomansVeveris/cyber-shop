@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import AnimatedBlock from '../utils/animation';
-
 import '../styles/HomeBody.css';
 import '../styles/global.css';
 
@@ -10,7 +9,6 @@ export function HomeBody() {
   const handleClick = () => {
     navigate('/products');
   }
-
   return (
     <div className="home-body">
         <section className="shop-now">

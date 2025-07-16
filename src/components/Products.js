@@ -97,5 +97,4 @@ export function Products({ limit = null, filter = 'all', sort = 'az' }) {
     </section>
   );
 }
-
 export default Products;

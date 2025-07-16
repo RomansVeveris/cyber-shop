@@ -38,10 +38,8 @@ export function Carousel() {
     const handleClick = () => {
         navigate('/products');
     }  
-
-
-  const containerRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+    const containerRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
 
   const handleScroll = () => {
     const container = containerRef.current;
@@ -69,19 +67,15 @@ export function Carousel() {
                 <button className="btn transparent-black" onClick={handleClick}>Shop Now</button>
             </div>
             ))}
-
       </div>
-
-    <div className="carousel-dots">
-        {items.map((_, i) => (
-        <div
-            key={i}
-            className={`dot ${i === activeIndex ? 'active' : ''}`}
-        />
-        ))}
-    </div>
-
-
+      <div className="carousel-dots">
+          {items.map((_, i) => (
+          <div
+              key={i}
+              className={`dot ${i === activeIndex ? 'active' : ''}`}
+          />
+          ))}
+      </div>
     </div>
   );
 }

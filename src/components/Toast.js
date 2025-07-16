@@ -11,9 +11,6 @@ export default function Toast({message, visible, onClose}) {
             return () => clearTimeout();
         } 
     }, [visible, onClose]);
-
     if (!visible) return null;
-
     return <div className="toast"><img src={verify} alt="product added to cart"/>{message}</div>;
-    
 }
