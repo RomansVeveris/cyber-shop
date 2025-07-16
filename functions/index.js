@@ -64,8 +64,8 @@ exports.createCheckoutSession = onCall(
         payment_method_types: ["card"],
         line_items,
         mode: "payment",
-        success_url: "http://localhost:3000/", 
-        cancel_url: "http://localhost:3000/",  
+        success_url: "https://cyber-shop-flax.vercel.app/", // soon will be changed to proper links
+        cancel_url: "https://cyber-shop-flax.vercel.app/",  
         metadata,
       });
 
