@@ -64,6 +64,10 @@
     text-align: center;
     background-color: var(--color-white);
 }
+.h4-sized {
+    text-align: center;
+    min-width: 7rem;
+}
 
 .btn-count {
     width: 1.5rem;

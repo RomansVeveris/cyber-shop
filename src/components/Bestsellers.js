@@ -54,33 +54,33 @@ export function Bestsellers() {
         const isLast = index === catalogItems.length - 1;
 
         return (
-            <div
-            key={item.id}
-            className={`catalog-item ${
-                item.id === 1 ? 'airpods' :
-                item.id === 2 ? 'vision' :
-                item.id === 3 ? 'playstation' :
-                item.id === 4 ? 'macbook' : ''
-            }`}
-            style={{
-                backgroundColor: item.background,
-                color: item.whiteTitle ? '#FFFFFF' : '#000000',
-            }}
-            >
-                <img src={item.image} alt={item.title} className="catalog-image" />
-                
-                <div className="catalog-content">
-                    <h2 className="catalog-h2">
-                    {rest} <strong className="catalog-strong">{lastWord}</strong>
-                    </h2>
-                    <p className="grey">{item.description}</p>
-                    {isLast && (
-                    <button className="btn transparent-black wide" onClick={handleClick}>
-                        Shop Now
-                    </button>
-                    )}
-                </div>
+          <div
+          key={item.id}
+          className={`catalog-item ${
+              item.id === 1 ? 'airpods' :
+              item.id === 2 ? 'vision' :
+              item.id === 3 ? 'playstation' :
+              item.id === 4 ? 'macbook' : ''
+          }`}
+          style={{
+              backgroundColor: item.background,
+              color: item.whiteTitle ? '#FFFFFF' : '#000000',
+          }}
+          >
+            <img src={item.image} alt={item.title} className="catalog-image" />
+            
+            <div className="catalog-content">
+                <h2 className="catalog-h2">
+                {rest} <strong className="catalog-strong">{lastWord}</strong>
+                </h2>
+                <p className="grey">{item.description}</p>
+                {isLast && (
+                <button className="btn transparent-black wide" onClick={handleClick}>
+                    Shop Now
+                </button>
+                )}
             </div>
+          </div>
         );
       })}
     </section>

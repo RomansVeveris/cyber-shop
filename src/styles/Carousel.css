@@ -25,12 +25,15 @@
   user-select: none;
   gap: 1rem;
   padding: 0 2rem 6rem 2rem;
+
+  transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.3s ease;
 }
 
 .carousel-img {
     position: absolute;
     top: 0;
     right: 0;
+    transition: transform 0.4s ease;
 }
 
 .carousel-img.phone {
@@ -100,9 +103,24 @@
 }
 
 @media (min-width: 480px) {
-    .carousel-img {
-        width: 18rem;
-    }
+  .carousel-img {
+      width: 18rem;
+      max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .carousel-item:hover {
+    z-index: 2;
+    transform: scale(1.05);
+    background-color: var(--color-white) !important;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.25);
+  }
+  .carousel-item:hover .carousel-img {
+    transform: translateY(25px);
+  }
+  .carousel-item:hover .carousel-img.phone {
+      transform: translate(-50%, 25px);
+  }
 }
 
 @media (min-width: 700px) and (max-width: 1399px) {

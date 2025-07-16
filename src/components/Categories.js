@@ -20,34 +20,34 @@ const categoryData = [
 ];
 
 export function Categories() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <section className="categories">
       <div className="categories-header">
         <h3>Browse By Category</h3>
         <div className="arrow-buttons">
-         <div className="categories-header arrow-buttons">
-                <button className="btn empty">
-                    <img src={leftArrow} alt="Left Arrow" />
-                </button>
-                <button className="btn empty">
-                    <img src={rightArrow} alt="Right Arrow" />
-                </button>
-            </div>
+          <div className="categories-header arrow-buttons">
+            <button className="btn empty">
+                <img src={leftArrow} alt="Left Arrow" />
+            </button>
+            <button className="btn empty">
+                <img src={rightArrow} alt="Right Arrow" />
+            </button>
+          </div>
         </div>
       </div>
       <div className="categories-list">
-         {categoryData.map((category, index) => (
-            <AnimatedBlock>
-                <div
-                className="category-item"
-                key={index}
-                onClick={() => navigate(`/products?filter=${category.value}`)}
-                style={{ cursor: 'pointer' }}
-                >
-                  <img src={category.icon} alt={category.label} />
-                  <p className="bold">{category.label}</p>
-                </div>
+        {categoryData.map((category, index) => (
+          <AnimatedBlock key={index}>
+            <div
+            className="category-item"
+            key={index}
+            onClick={() => navigate(`/products?filter=${category.value}`)}
+            style={{ cursor: 'pointer' }}
+            >
+              <img src={category.icon} alt={category.label} />
+              <p className="bold">{category.label}</p>
+            </div>
           </AnimatedBlock>
         ))}
       </div>

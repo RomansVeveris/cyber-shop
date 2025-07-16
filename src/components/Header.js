@@ -46,42 +46,40 @@ function Header() {
           <div className="header-container-right">
             <nav className="header-nav">
               <Link to="/">Home</Link>
-               <Link to="/products">Products</Link>
+              <Link to="/products">Products</Link>
               <a href="#contact-us">About</a>
               <a href="#blog">Contact</a>
             </nav>
             <div className="cart-container">
-            <Link to="/products/cart" className="cart-icon-wrapper">
-              <img src={cart} alt="shopping cart" />
-              {totalQuantity > 0 && (
-                <div className="cart-badge-wrapper">
-                  <span className="cart-badge">{totalQuantity}</span>
-                </div>
-              )}
-            </Link>
-            
+              <Link to="/products/cart" className="cart-icon-wrapper">
+                <img src={cart} alt="shopping cart" />
+                {totalQuantity > 0 && (
+                  <div className="cart-badge-wrapper">
+                    <span className="cart-badge">{totalQuantity}</span>
+                  </div>
+                )}
+              </Link>
             </div>
           </div>
-            <img src={burger} className="App-burger" alt="menu" onClick={() => setMenuOpen(!menuOpen)}/>
-          
+          <img src={burger} className="App-burger" alt="menu" onClick={() => setMenuOpen(!menuOpen)}/>
           <div className="header-product-filter">
             <div className="filter-container">
-                  {filterItems.map((item, index) => (
-                    <React.Fragment key={index}>
-                      <div
-                        className="filter-item"
-                        onClick={() => navigate(`/products?filter=${item.value}`)}
-                        style={{ cursor: 'pointer' }}
-                      >
-                        <img src={item.img} alt={item.label} />
-                        <p className="grey nav-link">{item.label}</p>
-                      </div>
-                      {index !== filterItems.length - 1 && (
-                        <div className="vertical-divider" />
-                      )}
-                    </React.Fragment>
-                  ))}
-                </div>
+              {filterItems.map((item, index) => (
+                <React.Fragment key={index}>
+                  <div
+                    className="filter-item"
+                    onClick={() => navigate(`/products?filter=${item.value}`)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <img src={item.img} alt={item.label} />
+                    <p className="grey nav-link">{item.label}</p>
+                  </div>
+                  {index !== filterItems.length - 1 && (
+                    <div className="vertical-divider" />
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
         </div>
         <div

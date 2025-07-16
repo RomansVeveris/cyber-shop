@@ -28,19 +28,18 @@ export function CartProvider({ children }) {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
-const updateQuantity = (id, delta) => {
-  setCartItems((prev) =>
-    prev.map((item) =>
-      item.id === id
-        ? {
-            ...item,
-            quantity: Math.min(20, Math.max(1, item.quantity + delta)),
-          }
-        : item
-    )
-  );
-};
-
+  const updateQuantity = (id, delta) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              quantity: Math.min(20, Math.max(1, item.quantity + delta)),
+            }
+          : item
+      )
+    );
+  };
 
   return (
     <CartContext.Provider

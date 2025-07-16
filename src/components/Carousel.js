@@ -55,26 +55,26 @@ export function Carousel() {
         className="carousel-container"
         ref={containerRef}
         onScroll={handleScroll}>
-            {items.map((item, i) => (
-            <div
-                key={i}
-                className="carousel-item"
-                style={{ backgroundColor: item.bg }}
-            >
-                <img src={item.image} className={`carousel-img ${(item.image===galaxy) ? 'phone' : ''}`} alt={item.title} />
-                <h4 className="carousel-title">{item.title}</h4>
-                <p className="grey">{item.description}</p>
-                <button className="btn transparent-black" onClick={handleClick}>Shop Now</button>
-            </div>
-            ))}
-      </div>
-      <div className="carousel-dots">
-          {items.map((_, i) => (
+          {items.map((item, i) => (
           <div
               key={i}
-              className={`dot ${i === activeIndex ? 'active' : ''}`}
-          />
+              className="carousel-item"
+              style={{ backgroundColor: item.bg }}
+          >
+            <img src={item.image} className={`carousel-img ${(item.image===galaxy) ? 'phone' : ''}`} alt={item.title} />
+            <h4 className="carousel-title">{item.title}</h4>
+            <p className="grey">{item.description}</p>
+            <button className="btn transparent-black" onClick={handleClick}>Shop Now</button>
+          </div>
           ))}
+      </div>
+      <div className="carousel-dots">
+        {items.map((_, i) => (
+        <div
+          key={i}
+          className={`dot ${i === activeIndex ? 'active' : ''}`}
+        />
+        ))}
       </div>
     </div>
   );

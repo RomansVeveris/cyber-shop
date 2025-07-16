@@ -26,49 +26,48 @@ export default function ShoppingCart() {
       <section className="cart-container">
         <h3 className="bold">Shopping Cart</h3>
         <div className="cart-item-container">
-        {cartItems.length === 0 ? (
+          {cartItems.length === 0 ? (
             <div className="empty-cart-container">
-                <h3 className="bold">Your cart is empty</h3>
-                <p className="grey">Here will be shown products when added to cart.</p>
-                <Link to ="/products" className="btn black wide link-btn">Continue shopping</Link>
+              <h3 className="bold">Your cart is empty</h3>
+              <p className="grey">Here will be shown products when added to cart.</p>
+              <Link to ="/products" className="btn black wide link-btn">Continue shopping</Link>
             </div>
-        ) : (
+          ) : (
             cartItems.map((item) => (
-            <div className="cart-item" key={item.id}>
+              <div className="cart-item" key={item.id}>
                 <img className="cart-item-image" src={item.img} alt={item.title} />
                 <div className="cart-item-info">
-                <div className="product-title">
+                  <div className="product-title">
                     <h5>{item.title}</h5>
                     <p>#{item.id}</p>
-                </div>
-                <div className="price-count-container">
+                  </div>
+                  <div className="price-count-container">
                     <div className="count-handler">
-                    <button className="btn-count" onClick={() => updateQuantity(item.id, -1)}>
+                      <button className="btn-count" onClick={() => updateQuantity(item.id, -1)}>
                         <img src={Minus} alt="decrease" />
-                    </button>
-                    <div className="count-container">
+                      </button>
+                      <div className="count-container">
                         <p>{item.quantity}</p>
-                    </div>
-                    <button className="btn-count" onClick={() => updateQuantity(item.id, 1)}>
+                      </div>
+                      <button className="btn-count" onClick={() => updateQuantity(item.id, 1)}>
                         <img src={Plus} alt="increase" />
-                    </button>
+                      </button>
                     </div>
-                    <h4>${(item.price * item.quantity).toFixed(2)}</h4>
+                    <h4 className="h4-sized">${(item.price * item.quantity).toFixed(2)}</h4>
                     <button className="btn-count" onClick={() => removeFromCart(item.id)}>
-                    <img src={Close} alt="remove" />
+                      <img src={Close} alt="remove" />
                     </button>
+                  </div>
                 </div>
-                </div>
-            </div>
+              </div>
             ))
-        )}
+          )}
         </div>
       </section>
 
       <section className={`order-summary-container ${cartItems.length === 0 ? 'blurred' : ''}`}>
         <div className="order-summary">
-          <div className="input">
-          </div>
+          <div className="input"></div>
           <h3 className="bold">Order Summary</h3>
           <div>
             <p className="small dark-grey bold">Email address</p>

@@ -82,9 +82,9 @@ export function Products({ limit = null, filter = 'all', sort = 'az' }) {
                 e.preventDefault();
                 e.stopPropagation();
                 const isInCart = cartItems.some(item => item.id === product.id);
-                    if (!isInCart) {
-                      addToCart(product);
-                    }
+                if (!isInCart) {
+                  addToCart(product);
+                }
                 navigate('/products/cart');
                 }
               }

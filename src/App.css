@@ -1,13 +1,13 @@
 .main-content {
-  min-height: calc(100vh - 22.5rem);
+  min-height: calc(100vh);
   display: block;
   padding-top: 5.5rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
   flex: 1;
+  overflow: auto;
 }
 
 

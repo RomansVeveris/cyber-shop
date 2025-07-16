@@ -9,6 +9,7 @@ import Catalog from './pages/Catalog';
 import ProductPage from './pages/ProductPage';
 import ShoppingCart from './pages/ShoppingCart';
 import ScrollToTop from './components/ScrollToTop';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/products" element={<Catalog />} />
           <Route path="/products/product/:id" element={<ProductPage />} />
           <Route path="/products/cart" element={<ShoppingCart />} />
+          <Route path="/404" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

@@ -13,11 +13,20 @@
     padding: 2.5rem 1rem;
     text-align: center;
     font-weight: 500;
+    overflow: hidden;
 }
 .catalog-image {
     max-height: 12.5rem;
     width: auto;
     margin-bottom: 1.5rem;
+}
+
+.catalog-item .catalog-image {
+    transition: transform 0.3s ease;
+}
+
+.catalog-item:hover .catalog-image {
+    transform: scale(1.12);
 }
 
 .catalog-h2 {
