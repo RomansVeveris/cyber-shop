@@ -15,6 +15,22 @@ exports.createCheckoutSession = onCall(
   async (request) => {
     try {
       logger.info("Webhook checkout");
+
+      const now = admin.firestore.Timestamp.now();
+      const oneHourAgo = admin.firestore.Timestamp.fromMillis(now.toMillis() - 60 * 60 * 1000);
+
+      const rateLimitQuery = await db
+        .collection("rate_limit")
+        .where("createdAt", ">=", oneHourAgo)
+        .get();
+
+      if (rateLimitQuery.size >= 5) {
+        logger.warn("Rate limit exceeded");
+        return { success: false, error: "Too many orders in last hour. Please retry later." };
+      }
+
+      await db.collection("rate_limit").add({ createdAt: now });
+
       const secretKey = stripeSecretKey.value();
       const stripe = require("stripe")(secretKey);
 
