@@ -45,8 +45,8 @@ export function Categories() {
                 onClick={() => navigate(`/products?filter=${category.value}`)}
                 style={{ cursor: 'pointer' }}
                 >
-                <img src={category.icon} alt={category.label} />
-                <p className="bold">{category.label}</p>
+                  <img src={category.icon} alt={category.label} />
+                  <p className="bold">{category.label}</p>
                 </div>
           </AnimatedBlock>
         ))}
