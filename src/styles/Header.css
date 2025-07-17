@@ -27,6 +27,9 @@ body {
   z-index: 999;  
 }
 
+.cart-container {
+  padding: 1rem;
+}
 .header-container {
   height: 5.5rem;
   display: flex;
@@ -237,6 +240,12 @@ input {
   color: rgb(255, 140, 159);
 }
 
+.nav-header-link {
+  color: var(--color1);
+}
+.nav-header-link.active-link {
+  color: #000;
+}
 
 @media (min-width: 768px) {
   .input-wrapper{

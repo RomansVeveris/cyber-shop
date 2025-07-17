@@ -14,7 +14,7 @@ export default function NotFound() {
       alignSelf: 'center',
 
       }}>
-      <h2 style={{ textAlign: 'center'}}>Oops! Product or page that you looking for does not exist</h2>
+      <h2 style={{ textAlign: 'center'}}>Oops! Product or page that you are looking for does not exist</h2>
       <p style={{ textAlign: 'center'}}>This could happen due to internal error or wrong request</p>
     </div>
   );

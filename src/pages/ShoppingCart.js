@@ -23,7 +23,7 @@ export default function ShoppingCart() {
 
   return (
     <div className="shopping-cart">
-      <section className="cart-container">
+      <section className="cart-container-inner">
         <h3 className="bold">Shopping Cart</h3>
         <div className="cart-item-container">
           {cartItems.length === 0 ? (
@@ -35,30 +35,32 @@ export default function ShoppingCart() {
           ) : (
             cartItems.map((item) => (
               <div className="cart-item" key={item.id}>
-                <img className="cart-item-image" src={item.img} alt={item.title} />
-                <div className="cart-item-info">
-                  <div className="product-title">
-                    <h5>{item.title}</h5>
-                    <p>#{item.id}</p>
-                  </div>
-                  <div className="price-count-container">
-                    <div className="count-handler">
-                      <button className="btn-count" onClick={() => updateQuantity(item.id, -1)}>
-                        <img src={Minus} alt="decrease" />
-                      </button>
-                      <div className="count-container">
-                        <p>{item.quantity}</p>
+                  <Link to={`/products/product/${item.id}`} className="product-link">
+                    <img className="cart-item-image" src={item.img} alt={item.title} />
+                  </Link>
+                  <div className="cart-item-info">
+                    <div className="product-title">
+                      <h5>{item.title}</h5>
+                      <p>#{item.id}</p>
+                    </div>
+                    <div className="price-count-container">
+                      <div className="count-handler">
+                        <button className="btn-count" onClick={() => updateQuantity(item.id, -1)}>
+                          <img src={Minus} alt="decrease" />
+                        </button>
+                        <div className="count-container">
+                          <p>{item.quantity}</p>
+                        </div>
+                        <button className="btn-count" onClick={() => updateQuantity(item.id, 1)}>
+                          <img src={Plus} alt="increase" />
+                        </button>
                       </div>
-                      <button className="btn-count" onClick={() => updateQuantity(item.id, 1)}>
-                        <img src={Plus} alt="increase" />
+                      <h4 className="h4-sized">${(item.price * item.quantity).toFixed(2)}</h4>
+                      <button className="btn-count" onClick={() => removeFromCart(item.id)}>
+                        <img src={Close} alt="remove" />
                       </button>
                     </div>
-                    <h4 className="h4-sized">${(item.price * item.quantity).toFixed(2)}</h4>
-                    <button className="btn-count" onClick={() => removeFromCart(item.id)}>
-                      <img src={Close} alt="remove" />
-                    </button>
                   </div>
-                </div>
               </div>
             ))
           )}

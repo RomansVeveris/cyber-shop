@@ -4,7 +4,7 @@ import burger from '../assets/icons/Burger.svg';
 import '../App.css';
 import searchIcon from '../assets/icons/Search.svg';
 import cart from '../assets/icons/Cart.svg';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Phones from '../assets/icons/header_nav_icons/Phones.svg';
 import Computers from '../assets/icons/header_nav_icons/Computers.svg';
@@ -45,10 +45,18 @@ function Header() {
 
           <div className="header-container-right">
             <nav className="header-nav">
-              <Link to="/">Home</Link>
-              <Link to="/products">Products</Link>
-              <a href="#contact-us">About</a>
-              <a href="#blog">Contact</a>
+              <NavLink to="/" className={({ isActive }) =>
+                isActive ? 'nav-header-link active-link' : 'nav-header-link'
+              }>Home</NavLink>
+              <NavLink to="/products" className={({ isActive }) =>
+                isActive ? 'nav-header-link active-link' : 'nav-header-link'
+              }>Products</NavLink>
+             <NavLink to="/about" className={({ isActive }) =>
+                isActive ? 'nav-header-link active-link' : 'nav-header-link'
+              }>About</NavLink>
+              <NavLink to="/contact" className={({ isActive }) =>
+                isActive ? 'nav-header-link active-link' : 'nav-header-link'
+              }>Contact</NavLink>
             </nav>
             <div className="cart-container">
               <Link to="/products/cart" className="cart-icon-wrapper">

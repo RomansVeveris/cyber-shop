@@ -6,7 +6,7 @@ const logger = require("firebase-functions/logger");
 
 admin.initializeApp();
 const db = admin.firestore();
-
+const functions = require('firebase-functions');
 const stripeSecretKey = defineSecret("STRIPE_SECRET_KEY");
 const stripeWebhookSecret = defineSecret("STRIPE_WEBHOOK_SECRET");
 
@@ -80,8 +80,8 @@ exports.createCheckoutSession = onCall(
         payment_method_types: ["card"],
         line_items,
         mode: "payment",
-        success_url: "https://cyber-shop-flax.vercel.app/", // soon will be changed to proper links
-        cancel_url: "https://cyber-shop-flax.vercel.app/",  
+        success_url: "https://https://cyber-shop-flax.vercel.app/payment-success?session_id={CHECKOUT_SESSION_ID}",
+        cancel_url: "https://https://cyber-shop-flax.vercel.app/payment-success?",  
         metadata,
       });
 
@@ -141,6 +141,38 @@ exports.handleStripeWebhook = onRequest(
     } catch (error) {
       logger.error("Error handling webhook:", error);
       res.status(500).send("Internal Server Error");
+    }
+  }
+);
+
+exports.verifyPayment = onRequest(
+  { cors: true },
+  async (req, res) => {
+    if (req.method !== 'POST') {
+      return res.status(405).json({ error: 'Method not allowed' });
+    }
+
+    const { session_id } = req.body;
+
+    if (!session_id) {
+      return res.status(400).json({ error: 'Missing session_id' });
+    }
+
+    try {
+      const ordersQuery = await db
+        .collection("orders")
+        .where("stripeSessionId", "==", session_id)
+        .limit(1)
+        .get();
+
+      if (ordersQuery.empty) {
+        return res.status(404).json({ error: 'Order not found' });
+      }
+
+      return res.status(200).json({ success: true, paid: true });
+    } catch (error) {
+      logger.error("Error verifying payment:", error);
+      return res.status(500).json({ error: 'Internal server error' });
     }
   }
 );

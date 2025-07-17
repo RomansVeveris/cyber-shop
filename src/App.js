@@ -10,6 +10,8 @@ import ProductPage from './pages/ProductPage';
 import ShoppingCart from './pages/ShoppingCart';
 import ScrollToTop from './components/ScrollToTop';
 import NotFound from './pages/NotFound';
+import About from './pages/About';
+import PaymentSuccess from './pages/PaymentSuccess';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/products/product/:id" element={<ProductPage />} />
           <Route path="/products/cart" element={<ShoppingCart />} />
           <Route path="/404" element={<NotFound />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
         </Routes>
       </main>
       <Footer />

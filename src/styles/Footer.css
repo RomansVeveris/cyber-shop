@@ -67,10 +67,11 @@ footer {
         flex-direction: row !important;
         align-items: start;
         text-align: start;
-        max-width: 43.5rem;
+        max-width: 70rem;
+        justify-content: space-between;
     }
     .footer-icon-container {
-        max-width: 43.5rem;
+        max-width: 70rem;
         justify-content: start;
     }
     .footer-column {

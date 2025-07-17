@@ -1,0 +1,28 @@
+.payment-results {
+    width: 85%;
+    max-width: 40rem;
+    padding: 2rem 1rem;
+    margin-top: 2.5rem;
+    box-shadow: 0 0 40px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: rgb(228, 238, 228);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    align-self: center;
+}
+.failed {
+    background-color: rgb(253, 193, 193);
+}
+.payment-result-icon {
+    width: 5rem;
+    height: 5rem;
+}
+
+@media (min-width: 768px) {
+    .payment-results {
+        margin-top: 5rem;
+    }
+}

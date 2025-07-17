@@ -47,6 +47,11 @@ p.bold.spaced{
 .product-img {
     max-width: 6.5rem;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+.products-item:hover .product-img {
+    transform: scale(1.1);
 }
 
 .buy-now-btn{
