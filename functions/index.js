@@ -80,8 +80,8 @@ exports.createCheckoutSession = onCall(
         payment_method_types: ["card"],
         line_items,
         mode: "payment",
-        success_url: "https://https://cyber-shop-flax.vercel.app/payment-success?session_id={CHECKOUT_SESSION_ID}",
-        cancel_url: "https://https://cyber-shop-flax.vercel.app/payment-success?",  
+        success_url: "https://cyber-shop-flax.vercel.app/payment-success?session_id={CHECKOUT_SESSION_ID}",
+        cancel_url: "https://cyber-shop-flax.vercel.app/payment-success?session_id=failed",  
         metadata,
       });
 
